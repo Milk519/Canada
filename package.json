@@ -1,122 +1,150 @@
 {
-  "_from": "discord.js",
-  "_id": "discord.js@11.4.2",
+  "_from": "common-tags@^1.0.0",
+  "_id": "common-tags@1.8.0",
   "_inBundle": false,
-  "_integrity": "sha512-MDwpu0lMFTjqomijDl1Ed9miMQe6kB4ifKdP28QZllmLv/HVOJXhatRgjS8urp/wBlOfx+qAYSXcdI5cKGYsfg==",
-  "_location": "/discord.js",
+  "_integrity": "sha512-6P6g0uetGpW/sdyUy/iQQCbFF0kWVMSIVSyYz7Zgjcgh8mgw8PQzDNZeyZ5DQ2gM7LBoZPHmnjz8rUthkBG5tw==",
+  "_location": "/common-tags",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "range",
     "registry": true,
-    "raw": "discord.js",
-    "name": "discord.js",
-    "escapedName": "discord.js",
-    "rawSpec": "",
+    "raw": "common-tags@^1.0.0",
+    "name": "common-tags",
+    "escapedName": "common-tags",
+    "rawSpec": "^1.0.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "^1.0.0"
   },
   "_requiredBy": [
-    "#USER",
-    "/"
+    "/discord.js-commando"
   ],
-  "_resolved": "https://registry.npmjs.org/discord.js/-/discord.js-11.4.2.tgz",
-  "_shasum": "54586981926521572051f2a30b984aad2b49786e",
-  "_spec": "discord.js",
-  "_where": "C:\\Users\\dylan\\Documents\\Discord\\snipebot",
+  "_resolved": "https://registry.npmjs.org/common-tags/-/common-tags-1.8.0.tgz",
+  "_shasum": "8e3153e542d4a39e9b10554434afaaf98956a937",
+  "_spec": "common-tags@^1.0.0",
+  "_where": "C:\\Users\\dylan\\Documents\\Discord\\snipebot\\node_modules\\discord.js-commando",
   "author": {
-    "name": "Amish Shah",
-    "email": "amishshah.2k@gmail.com"
-  },
-  "browser": {
-    "ws": false,
-    "uws": false,
-    "erlpack": false,
-    "prism-media": false,
-    "opusscript": false,
-    "node-opus": false,
-    "tweetnacl": false,
-    "sodium": false,
-    "src/sharding/Shard.js": false,
-    "src/sharding/ShardClientUtil.js": false,
-    "src/sharding/ShardingManager.js": false,
-    "src/client/voice/dispatcher/StreamDispatcher.js": false,
-    "src/client/voice/opus/BaseOpusEngine.js": false,
-    "src/client/voice/opus/NodeOpusEngine.js": false,
-    "src/client/voice/opus/OpusEngineList.js": false,
-    "src/client/voice/opus/OpusScriptEngine.js": false,
-    "src/client/voice/pcm/ConverterEngine.js": false,
-    "src/client/voice/pcm/ConverterEngineList.js": false,
-    "src/client/voice/pcm/FfmpegConverterEngine.js": false,
-    "src/client/voice/player/AudioPlayer.js": false,
-    "src/client/voice/receiver/VoiceReadable.js": false,
-    "src/client/voice/receiver/VoiceReceiver.js": false,
-    "src/client/voice/util/Secretbox.js": false,
-    "src/client/voice/util/SecretKey.js": false,
-    "src/client/voice/util/VolumeInterface.js": false,
-    "src/client/voice/ClientVoiceManager.js": false,
-    "src/client/voice/VoiceBroadcast.js": false,
-    "src/client/voice/VoiceConnection.js": false,
-    "src/client/voice/VoiceUDPClient.js": false,
-    "src/client/voice/VoiceWebSocket.js": false
+    "name": "Declan de Wet",
+    "email": "declandewet@me.com"
   },
   "bugs": {
-    "url": "https://github.com/discordjs/discord.js/issues"
+    "url": "http://github.com/declandewet/common-tags/issues"
   },
   "bundleDependencies": false,
-  "dependencies": {
-    "long": "^4.0.0",
-    "prism-media": "^0.0.3",
-    "snekfetch": "^3.6.4",
-    "tweetnacl": "^1.0.0",
-    "ws": "^4.0.0"
-  },
+  "contributors": [
+    {
+      "name": "Declan de Wet",
+      "url": "https://github.com/declandewet"
+    },
+    {
+      "name": "Jason Killian",
+      "url": "https://github.com/JKillian"
+    },
+    {
+      "name": "Laurent Goudet",
+      "url": "https://github.com/laurentgoudet"
+    },
+    {
+      "name": "Kamil Ogórek",
+      "url": "https://github.com/kamilogorek"
+    },
+    {
+      "name": "Lucian Buzzo",
+      "url": "https://github.com/LucianBuzzo"
+    },
+    {
+      "name": "Rafał Ruciński",
+      "url": "https://github.com/fatfisz"
+    }
+  ],
   "deprecated": false,
-  "description": "A powerful library for interacting with the Discord API",
+  "description": "a few common utility template tags for ES2015",
   "devDependencies": {
-    "@types/node": "^9.4.6",
-    "discord.js-docgen": "github:discordjs/docgen",
-    "eslint": "^4.18.0",
-    "parallel-webpack": "^2.2.0",
-    "uglifyjs-webpack-plugin": "^1.2.0",
-    "webpack": "^3.11.0"
+    "babel-cli": "6.26.0",
+    "babel-eslint": "8.2.3",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-export-extensions": "6.22.0",
+    "babel-preset-env": "1.7.0",
+    "babel-register": "6.26.0",
+    "codecov": "3.0.2",
+    "cross-env": "5.1.6",
+    "doctoc": "1.3.1",
+    "eslint": "4.19.1",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "jest": "23.0.0",
+    "micromatch": "3.1.10",
+    "prettier": "1.12.1",
+    "rimraf": "2.6.2",
+    "rollup": "0.59.3",
+    "rollup-plugin-babel": "3.0.4",
+    "rollup-plugin-node-resolve": "3.3.0",
+    "rollup-plugin-uglify": "4.0.0",
+    "when": "3.7.8"
+  },
+  "directories": {
+    "lib": "lib"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=4.0.0"
   },
-  "homepage": "https://github.com/discordjs/discord.js#readme",
-  "keywords": [
-    "discord",
-    "api",
-    "bot",
-    "client",
-    "node",
-    "discordapp"
+  "files": [
+    "dist",
+    "es",
+    "lib"
   ],
-  "license": "Apache-2.0",
-  "main": "./src/index",
-  "name": "discord.js",
-  "peerDependencies": {
-    "bufferutil": "^3.0.3",
-    "erlpack": "discordapp/erlpack",
-    "node-opus": "^0.2.7",
-    "opusscript": "^0.0.6",
-    "sodium": "^2.0.3",
-    "libsodium-wrappers": "^0.7.3",
-    "uws": "^9.14.0"
-  },
+  "homepage": "https://github.com/declandewet/common-tags",
+  "jsnext:main": "es",
+  "keywords": [
+    "array",
+    "babel",
+    "es2015",
+    "es2015-tag",
+    "es6",
+    "es6-tag",
+    "heredoc",
+    "html",
+    "indent",
+    "indents",
+    "line",
+    "literal",
+    "multi",
+    "multiline",
+    "normalize",
+    "one",
+    "oneline",
+    "single",
+    "singleline",
+    "string",
+    "strings",
+    "strip",
+    "tag",
+    "tagged",
+    "template"
+  ],
+  "license": "MIT",
+  "main": "lib",
+  "module": "es",
+  "name": "common-tags",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/discordjs/discord.js.git"
+    "url": "git+https://github.com/declandewet/common-tags.git"
   },
-  "runkitExampleFilename": "./docs/examples/ping.js",
   "scripts": {
-    "docs": "docgen --source src --custom docs/index.yml --output docs/docs.json",
-    "docs:test": "docgen --source src --custom docs/index.yml",
-    "lint": "eslint src",
-    "lint:fix": "eslint --fix src",
-    "test": "npm run lint && npm run docs:test",
-    "webpack": "parallel-webpack"
+    "build": "npm run clear && npm run build:cjs && npm run build:es && npm run build:unpkg",
+    "build:cjs": "babel src -d lib --ignore *.test.js",
+    "build:es": "cross-env BABEL_ENV=es babel src -d es --ignore *.test.js",
+    "build:unpkg": "cross-env BABEL_ENV=es rollup --config",
+    "clear": "rimraf lib && rimraf es",
+    "codecov": "codecov",
+    "doctoc": "doctoc readme.md --title \"## Table of Contents\"",
+    "lint": "eslint .*rc.js src/**/*.js --ignore-pattern '!.*rc.js'",
+    "lint:fix": "eslint --fix .*rc.js src/**/*.js --ignore-pattern '!.*rc.js'",
+    "prerelease": "npm run build",
+    "preversion": "npm run doctoc  && npm test",
+    "release": "npm publish",
+    "test": "npm run lint && jest"
   },
-  "types": "./typings/index.d.ts",
-  "version": "11.4.2"
+  "unpkg": "dist/common-tags.min.js",
+  "version": "1.8.0"
 }
