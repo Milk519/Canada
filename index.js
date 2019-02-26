@@ -1,84 +1,64 @@
-// require packages
-const Discord = require ('discord.js');
-const settings = require('./settings.json');
-const fs = require('fs');
+const Util = require('./util/Util');
 
-// initialise are bot
-const bot = new Discord.Client();
-bot.commands = new Discord.Collection();
+module.exports = {
+  // "Root" classes (starting points)
+  Client: require('./client/Client'),
+  Shard: require('./sharding/Shard'),
+  ShardClientUtil: require('./sharding/ShardClientUtil'),
+  ShardingManager: require('./sharding/ShardingManager'),
+  WebhookClient: require('./client/WebhookClient'),
 
-// import bot settings (data)
-const prefix = settings.prefix;
-const token = settings.token;
-const owner = settings.owner;
+  // Utilities
+  Collection: require('./util/Collection'),
+  Constants: require('./util/Constants'),
+  DiscordAPIError: require('./client/rest/DiscordAPIError'),
+  EvaluatedPermissions: require('./util/Permissions'),
+  Permissions: require('./util/Permissions'),
+  Snowflake: require('./util/Snowflake'),
+  SnowflakeUtil: require('./util/Snowflake'),
+  Util: Util,
+  util: Util,
+  version: require('../package').version,
 
-//read commands files
-fs.readdir('./cmds', (err,files) => {
-    if (err) {
-        console.log(err);
-    }
+  // Shortcuts to Util methods
+  escapeMarkdown: Util.escapeMarkdown,
+  fetchRecommendedShards: Util.fetchRecommendedShards,
+  splitMessage: Util.splitMessage,
 
-    let cmdFiles = files.filter(f => f.split(".").pop() === "js");
-
-    if (cmdFiles.length === 0){
-        console.log("No files found");
-        return;
-    }
-
-    cmdFiles.forEach((f,i) => {
-        let props = require (`./cmds/${f}`);
-        console.log(`1${i+1}: ${f} loaded`);
-        bot.commands.set(props.help.name, props);
-    })
-})
-
-let raw = fs.readFileSync('./roles.json');
-let allowedRoles = JSON.parse(raw);
-
-let validation = function(serverRoles, userRoles){
-    let val = false;
-    serverRoles.forEach((role) => {
-        userRoles.forEach((usr) => {
-            if (role == usr){
-                val = true;
-            }
-        });
-    });
-    return val;
-}
-
-
-
-
-bot.on('ready', async () => {
-    console.log("hello, im ready");
-
-});
-
-
-bot.on("message",msg => {
-    if (msg.channel.type === "dm") return;
-    if (msg.author.bot) return;
-
-    let msg_array = msg.content.split(" ");
-    let command = msg_array[0];
-    let args = msg_array.slice(1);
- 
-    if (!command.startsWith(prefix)) return;
-
-
-    if (validation(allowedRoles.roles,msg.member.roles.array()) || msg.member.id === owner){
-        let cmd = bot.commands.get(command.slice(prefix.length));
-        if (cmd){
-            cmd.run(bot,msg,args);
-        }
-    } else {
-        msg.channel.send("You Don't Have Acces To This Command");
-    }
-
-}); 
-
-
-
-//Bot Login
-bot.login(token);
+  // Structures
+  Attachment: require('./structures/Attachment'),
+  CategoryChannel: require('./structures/CategoryChannel'),
+  Channel: require('./structures/Channel'),
+  ClientUser: require('./structures/ClientUser'),
+  ClientUserSettings: require('./structures/ClientUserSettings'),
+  Collector: require('./structures/interfaces/Collector'),
+  DMChannel: require('./structures/DMChannel'),
+  Emoji: require('./structures/Emoji'),
+  Game: require('./structures/Presence').Game,
+  GroupDMChannel: require('./structures/GroupDMChannel'),
+  Guild: require('./structures/Guild'),
+  GuildAuditLogs: require('./structures/GuildAuditLogs'),
+  GuildChannel: require('./structures/GuildChannel'),
+  GuildMember: require('./structures/GuildMember'),
+  Invite: require('./structures/Invite'),
+  Message: require('./structures/Message'),
+  MessageAttachment: require('./structures/MessageAttachment'),
+  MessageCollector: require('./structures/MessageCollector'),
+  MessageEmbed: require('./structures/MessageEmbed'),
+  MessageMentions: require('./structures/MessageMentions'),
+  MessageReaction: require('./structures/MessageReaction'),
+  OAuth2Application: require('./structures/OAuth2Application'),
+  ClientOAuth2Application: require('./structures/OAuth2Application'),
+  PartialGuild: require('./structures/PartialGuild'),
+  PartialGuildChannel: require('./structures/PartialGuildChannel'),
+  PermissionOverwrites: require('./structures/PermissionOverwrites'),
+  Presence: require('./structures/Presence').Presence,
+  ReactionEmoji: require('./structures/ReactionEmoji'),
+  ReactionCollector: require('./structures/ReactionCollector'),
+  RichEmbed: require('./structures/RichEmbed'),
+  Role: require('./structures/Role'),
+  TextChannel: require('./structures/TextChannel'),
+  User: require('./structures/User'),
+  VoiceChannel: require('./structures/VoiceChannel'),
+  Webhook: require('./structures/Webhook'),
+};
